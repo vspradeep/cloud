@@ -1,0 +1,478 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Automating Workload Deployment">
+
+<title>iManage</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0-rc.1/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-rc.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="{% static 'css/layouts/side-menu-old-ie.css' %}">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="{% static 'css/layouts/side-menu.css' %}">
+    <!--<![endif]-->
+	
+<style>	
+#fountainTextG{
+	width:234px;
+	margin:auto;
+}
+
+.fountainTextG{
+	color:rgb(0,0,0);
+	font-family:Arial;
+	font-size:24px;
+	text-decoration:none;
+	font-weight:normal;
+	font-style:normal;
+	float:left;
+	animation-name:bounce_fountainTextG;
+		-o-animation-name:bounce_fountainTextG;
+		-ms-animation-name:bounce_fountainTextG;
+		-webkit-animation-name:bounce_fountainTextG;
+		-moz-animation-name:bounce_fountainTextG;
+	animation-duration:2.09s;
+		-o-animation-duration:2.09s;
+		-ms-animation-duration:2.09s;
+		-webkit-animation-duration:2.09s;
+		-moz-animation-duration:2.09s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	transform:scale(.5);
+		-o-transform:scale(.5);
+		-ms-transform:scale(.5);
+		-webkit-transform:scale(.5);
+		-moz-transform:scale(.5);
+}#fountainTextG_1{
+	animation-delay:0.75s;
+		-o-animation-delay:0.75s;
+		-ms-animation-delay:0.75s;
+		-webkit-animation-delay:0.75s;
+		-moz-animation-delay:0.75s;
+}
+#fountainTextG_2{
+	animation-delay:0.9s;
+		-o-animation-delay:0.9s;
+		-ms-animation-delay:0.9s;
+		-webkit-animation-delay:0.9s;
+		-moz-animation-delay:0.9s;
+}
+#fountainTextG_3{
+	animation-delay:1.05s;
+		-o-animation-delay:1.05s;
+		-ms-animation-delay:1.05s;
+		-webkit-animation-delay:1.05s;
+		-moz-animation-delay:1.05s;
+}
+#fountainTextG_4{
+	animation-delay:1.2s;
+		-o-animation-delay:1.2s;
+		-ms-animation-delay:1.2s;
+		-webkit-animation-delay:1.2s;
+		-moz-animation-delay:1.2s;
+}
+#fountainTextG_5{
+	animation-delay:1.35s;
+		-o-animation-delay:1.35s;
+		-ms-animation-delay:1.35s;
+		-webkit-animation-delay:1.35s;
+		-moz-animation-delay:1.35s;
+}
+#fountainTextG_6{
+	animation-delay:1.5s;
+		-o-animation-delay:1.5s;
+		-ms-animation-delay:1.5s;
+		-webkit-animation-delay:1.5s;
+		-moz-animation-delay:1.5s;
+}
+#fountainTextG_7{
+	animation-delay:1.64s;
+		-o-animation-delay:1.64s;
+		-ms-animation-delay:1.64s;
+		-webkit-animation-delay:1.64s;
+		-moz-animation-delay:1.64s;
+}
+
+
+
+
+@keyframes bounce_fountainTextG{
+	0%{
+		transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-o-keyframes bounce_fountainTextG{
+	0%{
+		-o-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-o-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-ms-keyframes bounce_fountainTextG{
+	0%{
+		-ms-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-ms-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-webkit-keyframes bounce_fountainTextG{
+	0%{
+		-webkit-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-webkit-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+
+@-moz-keyframes bounce_fountainTextG{
+	0%{
+		-moz-transform:scale(1);
+		color:rgb(0,0,0);
+	}
+
+	100%{
+		-moz-transform:scale(.5);
+		color:rgb(255,255,255);
+	}
+}
+</style>	
+	
+<script type="text/javascript">
+	//$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);	
+	
+	var apacheserver =''
+	var tomcat=''
+	var sql=''
+	var dc=''
+	var kc=''
+	var ps=''
+	var wp=''
+	var stac=''
+function checkCheckBoxes(theForm) {
+	//alert(document.getElementById("as").checked);
+	//document.getElementById("fountainTextG").style.display = 'none';
+	if (document.getElementById("as").checked == true){
+		apacheserver=document.getElementById("as").value;
+	}
+	if (document.getElementById("at").checked == true){
+		tomcat=document.getElementById("at").value;
+	}
+	if (document.getElementById("sql").checked == true){
+		sql=document.getElementById("sql").value;
+	}
+	if (document.getElementById("dc").checked == true){
+		dc=document.getElementById("dc").value;
+	}
+	if (document.getElementById("kc").checked == true){
+		kc=document.getElementById("kc").value;
+	}
+	if (document.getElementById("ps").checked == true){
+		ps=document.getElementById("ps").value;
+	}
+	if (document.getElementById("wp").checked == true){
+		wp=document.getElementById("wp").value;
+	}
+	if (document.getElementById("stac").checked == true){
+		stac=document.getElementById("stac").value;
+	}
+	var info = [];
+	info[0] = apacheserver;
+	info[1] = tomcat;
+	info[2] = sql;
+	info[3] = dc;
+	info[4] = kc;
+	info[5] = ps;
+	info[6] = wp;
+	info[7] = stac;
+	if (
+		document.getElementById("as").checked == false &&
+		document.getElementById("at").checked == false &&
+		document.getElementById("sql").checked == false &&
+		document.getElementById("dc").checked == false &&
+		document.getElementById("kc").checked == false &&
+		document.getElementById("ps").checked == false &&
+		document.getElementById("wp").checked == false &&
+		document.getElementById("stac").checked == false) {
+		
+		alert ('Please select a package to install');
+		return false;
+	} else { 	
+		if (confirm('Do you want to submit?')) {     	
+	        
+			//alert("Selected: " + apacheserver + " , " + tomcat + " , " + sql + " , " + dc + " , " + kc + " , " + ps + " , " + wp + " , " + stac)
+					   
+			ids = ""
+			for(var i = 0; i<info.length; i++){
+				if(info[i]!=''){
+					ids += info[i]+","					  
+				}
+			}        
+		} else {
+          
+		   location.reload();
+		   return false;
+       }
+	}	
+	//http://malsup.com/jquery/block/
+	$.blockUI();
+	$.ajax({
+		 url:"/app_deployment/installSoftwares/?ids="+ids,
+		 dataType: 'json',
+		 success:function(json){
+		 
+			
+		 
+			if(json.status=="success"){
+				//alert("VM creation in progress....")
+				var delay=2000; //2 seconds
+				alert(json.msg);	
+				setTimeout(function() {
+				  
+				  checkDeployStatus(json.envid,json.sessid,true)
+				}, delay);
+							
+				//alert(json.msg);
+				//location.reload();
+				
+				
+			}
+			else if(json.msg){
+				alert(json.msg);
+				location.reload();
+			}
+			else{
+				alert("Error occured");	
+				location.reload();	
+			}
+			
+			//
+		 }
+		
+	});	
+	//$.unblockUI();
+}
+
+function checkDeployStatus(envid,sessid,notify){
+	
+	$.ajax({
+		 url:"/app_deployment/getDeployInfo?envid="+envid+"&sessid="+sessid,
+		 dataType: 'json',
+		 success:function(json){
+			
+			if(json.status=="success"){
+			
+				if(json.state=="deploying"){	
+
+					if(notify == true){
+						$.unblockUI();
+						alert("Deployment in progress...")
+						document.getElementById("fountainTextG").style.display = '';	
+					}
+				
+					var delay=30000; //30 seconds
+					
+					setTimeout(function() {	
+					  document.getElementById("fountainTextG").style.display = '';
+					  checkDeployStatus(envid,sessid,false);
+					}, delay);							
+					
+					
+				}
+				else{
+					document.getElementById("fountainTextG").style.display = 'none';				
+					alert('Deployment status :: '+json.state)
+					location.reload();
+				}
+				
+			}
+			else if(json.msg){
+				document.getElementById("fountainTextG").style.display = 'none';
+				alert(json.msg);
+				location.reload();
+			}
+			else{
+				document.getElementById("fountainTextG").style.display = 'none';
+				alert("Error occurred,while fetching deployment details");	
+				location.reload();	
+			}
+			
+			
+		 }
+	});		
+
+}
+
+</script>
+<style>
+	.pure-menu-selected1{
+		 background: #6f6f6f none repeat scroll 0 0;
+	}
+</style>
+
+</head>
+<body>
+
+<form  >
+	<div id="layout">
+		<!-- Menu toggle -->
+		<a href="#menu" id="menuLink" class="menu-link"> <!-- Hamburger icon -->
+			<span></span>
+		</a>
+
+		<!--<div id="menu">
+			<div class="pure-menu">
+				<a class="pure-menu-heading" href="/">HOME</a>				
+			</div>
+		</div>-->
+		
+		<div id="menu" style="width:165px";>
+			<div class="pure-menu">
+				<a class="pure-menu-heading" href="/" style="text-transform: none;">iManage</a>
+				<ul class="pure-menu-list">
+					<li class="pure-menu-heading" style="background: transparent none repeat scroll 0% 0%; padding: 0px;">Openstack</li>
+					<li class="pure-menu-item ">
+						<a href="/Images" class="pure-menu-link">Upload Image</a></li>
+					<li class="pure-menu-item">
+						<a href="/app_deployment/" class="pure-menu-link pure-menu-selected1">Application Deployment</a></li>
+					<li class="pure-menu-item">
+						<a href="/Migrate" class="pure-menu-link">Live Migration</a></li>
+					<li class="pure-menu-item">
+						<a href="/VNFCatalog" class="pure-menu-link">VNF Catalog</a></li>
+					<li class="pure-menu-item">
+						<a href="/VNFManager" class="pure-menu-link">VNF Manager</a></li>
+
+
+					<li class="pure-menu-heading" style="background: transparent none repeat scroll 0% 0%; padding: 0px;">Docker</li>
+					<li class="pure-menu-item"><a href="/Nodes" class="pure-menu-link">Node Management</a></li>
+					<li class="pure-menu-item"><a href="/Manage"
+						class="pure-menu-link">Images and Containers</a></li>
+					<li class="pure-menu-item"><a href="/Build"
+						class="pure-menu-link">Build</a></li>
+					<li class="pure-menu-item"><a href="/Deploy"
+						class="pure-menu-link">Deploy</a></li>
+
+				</ul>
+				<div style="bottom: 0px; position: fixed;"> <span class="glyphicon glyphicon-copyright-mark" style=""></span> Cogizant</div>
+			</div>
+		</div>
+		
+
+		<div id="main">
+			<div class="header">
+				<h1>Application Deployment</h1>
+				<!-- <h1>Self Service Application Deployment Portal</h1> -->
+				<!-- <h2>Using Murano</h2> -->
+			</div>
+
+			<div class="content">
+				
+				<div id="fountainTextG" style="display:none">				
+					<div id="fountainTextG_1" class="fountainTextG">D</div>
+					<div id="fountainTextG_2" class="fountainTextG">e</div>
+					<div id="fountainTextG_3" class="fountainTextG">p</div>
+					<div id="fountainTextG_4" class="fountainTextG">l</div>
+					<div id="fountainTextG_5" class="fountainTextG">o</div>
+					<div id="fountainTextG_6" class="fountainTextG">y</div>
+					<div id="fountainTextG_7" class="fountainTextG">i</div>
+					<div id="fountainTextG_8" class="fountainTextG">n</div>
+					<div id="fountainTextG_9" class="fountainTextG">g</div>
+				</div>
+				
+				<div style="clear:both"> </div>
+
+				
+				<h2 class="content-subhead">Application Packages</h2>
+				<p>Application Packages to be installed are listed below</p>
+
+				<table id="imageTable" class="pure-table" style="table-layout: fixed; word-wrap: break-word; width: 750px;">
+					<thead>
+						<td>
+            <input type="checkbox" id="as" name="ApacheServer" value="apachehttpserver"> Apache Server
+        </td>
+<td>
+            <input type="checkbox" id="at" name="ApacheTomcat" value="apachetomcat"> Apache Tomcat
+        </td>
+</tr>
+<tr>
+  <td>
+  <input type="checkbox" id="sql" name="MySql" value="mysql" > MySql
+</td>
+<td>
+            <input type="checkbox" id="dc" name="DockerContainer" value="dockerapp"> Docker 
+        </td>
+</tr>
+<tr>
+<td>
+            <input type="checkbox" id="kc" name="KubernetesCluster" value="kubernetescluster"> Kubernetes Cluster
+        </td>
+<td>
+            <input type="checkbox" id="ps" name="PostgreSql" value="postgresql"> PostgreSql
+        </td>
+</tr>
+<tr>
+<td>
+            <input type="checkbox" id="wp" name="WordPress" value="wordpess"> WordPress
+        </td>
+<td>
+            <input type="checkbox" id="stac" name="Stackato" value="stackatonode"> Stackato
+        </td>
+</tr>
+					</thead>
+
+					<tbody>
+
+					</tbody>
+				</table>
+<br><br><br><br>
+<div class="form-group">
+<input type="button" class="btn btn-success" value="Submit" align="center" onclick="checkCheckBoxes(this);"/>
+</div>
+</div>
+</div>
+</div>
+<script src="{% static 'js/ui.js' %}"></script>
+</form>
+</body>
+</html>
