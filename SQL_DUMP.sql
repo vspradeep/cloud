@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `docker_ui` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS 'docker_ui' /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `docker_ui`;
 -- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
 --
